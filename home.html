@@ -1,0 +1,268 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialMedia - Connect, Share, Engage</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+  }
+  .header {
+    background-color: #1877f2;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    z-index: 999;
+  }
+  .nav a {
+    color: #65676b;
+    text-decoration: none;
+    padding: 0 20px;
+    font-weight: bold;
+  }
+  .nav a:hover, .nav a.active {
+    color: #1877f2;
+  }
+  .content {
+    max-width: 1200px;
+    margin: 100px auto 0;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .sidebar {
+    width: 25%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    height: fit-content;
+  }
+  .main-content {
+    width: 70%;
+  }
+  .post {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .username {
+    font-weight: bold;
+  }
+  .post-content {
+    margin-bottom: 10px;
+  }
+  .post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    color: #65676b;
+  }
+  .action {
+    cursor: pointer;
+  }
+  .action:hover {
+    color: #1877f2;
+  }
+  .create-post {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .create-post textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .create-post button {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+  }
+  @media (max-width: 768px) {
+    .sidebar, .main-content {
+      width: 100%;
+    }
+    .content {
+      margin-top: 120px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">SocialMedia</div>
+  </header>
+  
+  <nav class="nav">
+    <a href="/home.html" class="active">Home</a>
+    <a href="/profile.html">Profile</a>
+    <a href="/messages.html">Messages</a>
+    <a href="/notifications.html">Notifications</a>
+  </nav>
+
+  <main class="content">
+    <aside class="sidebar">
+      <h2>Trending Topics</h2>
+      <ul>
+        <li>#SummerVibes</li>
+        <li>#TechNews</li>
+        <li>#HealthyLiving</li>
+        <li>#TravelDreams</li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="create-post">
+        <textarea placeholder="What's on your mind?"></textarea>
+        <button>Post</button>
+      </div>
+
+      <div class="post">
+        <div class="post-header">
+          <img src="tulip1.jfif" alt="User 1 avatar" class="avatar">
+          <span class="username">JohnDoe</span>
+        </div>
+        <div class="post-content">
+          Just finished an amazing hike! The view was breathtaking. 🏞️
+        </div>
+        <img src="tulip2.jfif" alt="Scenic mountain view from a hiking trail" class="post-image" width="400" height="300">
+        <div class="post-actions">
+          <span class="action like">Like <span class="like-count">0</span></span>
+          <span class="action">Comment</span>
+          <span class="action">Share</span>
+        </div>
+      </div>
+      
+      <div class="post">
+        <div class="post-header">
+          <img src="tulip3.jfif" alt="User 2 avatar" class="avatar">
+          <span class="username">JaneSmith</span>
+        </div>
+        <div class="post-content">
+          Just adopted this cutie! Meet Max, my new furry friend. 🐶❤️
+        </div>
+        <img src="tulip4.jfif" alt="Adorable golden retriever puppy" class="post-image" width="400" height="300">
+        <div class="post-actions">
+          <span class="action like">Like <span class="like-count">0</span></span>
+          <span class="action">Comment</span>
+          <span class="action">Share</span>
+        </div>
+      </div>
+      
+      <div class="post">
+        <div class="post-header">
+          <img src="tulip5.jfif" alt="User 3 avatar" class="avatar">
+          <span class="username">TechEnthusiast</span>
+        </div>
+        <div class="post-content">
+          Just got my hands on the latest smartphone! The camera is incredible. 📱📸
+        </div>
+        <img src="bini.jfif" alt="Person holding a sleek new smartphone" class="post-image" width="400" height="300">
+        <div class="post-actions">
+          <span class="action like">Like <span class="like-count">0</span></span>
+          <span class="action">Comment</span>
+          <span class="action">Share</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.action').forEach(action => {
+      action.addEventListener('click', function() {
+        if (this.classList.contains('like')) {
+          const likeCount = this.querySelector('.like-count');
+          let count = parseInt(likeCount.textContent);
+          count++;
+          likeCount.textContent = count;
+        } else {
+          alert(`You clicked ${this.textContent.trim()}!`);
+        }
+      });
+    });
+
+    document.querySelector('.create-post button').addEventListener('click', function() {
+      const postContent = document.querySelector('.create-post textarea').value;
+      if (postContent.trim() !== '') {
+        const newPost = document.createElement('div');
+        newPost.className = 'post';
+        newPost.innerHTML = `
+          <div class="post-header">
+            <img src="tulip1.jfif" alt="Your avatar" class="avatar">
+            <span class="username">You</span>
+          </div>
+          <div class="post-content">${postContent}</div>
+          <div class="post-actions">
+            <span class="action like">Like <span class="like-count">0</span></span>
+            <span class="action">Comment</span>
+            <span class="action">Share</span>
+          </div>
+        `;
+        document.querySelector('.main-content').insertBefore(newPost, document.querySelector('.post'));
+        document.querySelector('.create-post textarea').value = '';
+        
+        // Add event listeners to the new post's actions
+        newPost.querySelectorAll('.action').forEach(action => {
+          action.addEventListener('click', function() {
+            if (this.classList.contains('like')) {
+              const likeCount = this.querySelector('.like-count');
+              let count = parseInt(likeCount.textContent);
+              count++;
+              likeCount.textContent = count;
+            } else {
+              alert(`You clicked ${this.textContent.trim()}!`);
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

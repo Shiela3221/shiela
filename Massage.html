@@ -1,0 +1,249 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Messages - SocialMedia</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #255aa8;
+    height: 100%;
+  }
+  .header {
+    background-color: #1877f2;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    z-index: 999;
+  }
+  .nav a {
+    color: #65676b;
+    text-decoration: none;
+    padding: 0 20px;
+    font-weight: bold;
+  }
+  .nav a:hover, .nav a.active {
+    color: #1877f2;
+  }
+  .content {
+    display: flex;
+    height: calc(100% - 100px);
+    margin-top: 100px;
+  }
+  .conversation-list {
+    width: 300px;
+    background-color: white;
+    border-right: 1px solid #dddfe2;
+    overflow-y: auto;
+  }
+  .conversation {
+    padding: 15px;
+    border-bottom: 1px solid #dddfe2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .conversation:hover {
+    background-color: #f0f2f5;
+  }
+  .conversation.active {
+    background-color: #e6f2ff;
+  }
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  .conversation-info {
+    flex-grow: 1;
+  }
+  .conversation-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .last-message {
+    color: #65676b;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chat-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+  }
+  .chat-header {
+    padding: 15px;
+    border-bottom: 1px solid #dddfe2;
+    font-weight: bold;
+  }
+  .messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+  }
+  .message {
+    max-width: 70%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 18px;
+    line-height: 1.4;
+  }
+  .message.received {
+    background-color: #f0f0f0;
+    align-self: flex-start;
+  }
+  .message.sent {
+    background-color: #0084ff;
+    color: white;
+    align-self: flex-end;
+  }
+  .message-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #dddfe2;
+  }
+  .message-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  .message-input button {
+    background-color: #0084ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .message-input button:hover {
+    background-color: #0073e6;
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">SocialMedia</div>
+  </header>
+  
+  <nav class="nav">
+    <a href="/home.html"
+    <a href="/profile.html"
+    <a href="/messages.html"
+    <a href="/notifications.html"
+  </nav>
+
+  <main class="content">
+    <div class="conversation-list">
+      <div class="conversation active">
+        <img src="tulip1.jfif" alt="John Doe's avatar" class="avatar" width="50" height="50">
+        <div class="conversation-info">
+          <div class="conversation-name">xyville</div>
+          <div class="last-message">Hey, ngano ka?</div>
+        </div>
+      </div>
+      <div class="conversation">
+        <img src="tulip2.jfif" alt="Jane Smith's avatar" class="avatar" width="50" height="50">
+        <div class="conversation-info">
+          <div class="conversation-name">joyce</div>
+          <div class="last-message">Are we still on for lunch?</div>
+        </div>
+      </div>
+      <div class="conversation">
+        <img src="tulip3.jfif" alt="Mike Johnson's avatar" class="avatar" width="50" height="50">
+        <div class="conversation-info">
+          <div class="conversation-name">ella</div>
+          <div class="last-message">Thanks for the help!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-area">
+      <div class="chat-header">
+        John Doe
+      </div>
+      <div class="messages" id="messageContainer">
+        <div class="message received">
+          Hey, how's it going?
+        </div>
+        <div class="message sent">
+          Hi John! I'm doing well, thanks. How about you?
+        </div>
+        <div class="message received">
+          I'm great! Just finished a big project at work.
+        </div>
+        <div class="message sent">
+          That's awesome! Congrats on completing the project. Want to grab coffee and catch up?
+        </div>
+        <div class="message received">
+          Sounds perfect! How about tomorrow afternoon?
+        </div>
+      </div>
+      <div class="message-input">
+        <input type="text" placeholder="Type a message..." id="messageInput">
+        <button id="sendButton">Send</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const messageInput = document.getElementById('messageInput');
+    const sendButton = document.getElementById('sendButton');
+    const messageContainer = document.getElementById('messageContainer');
+
+    function sendMessage() {
+      const messageText = messageInput.value.trim();
+      if (messageText) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', 'sent');
+        messageElement.textContent = messageText;
+        messageContainer.appendChild(messageElement);
+        messageInput.value = '';
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+      }
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+
+    messageInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    document.querySelectorAll('.conversation').forEach(conv => {
+      conv.addEventListener('click', function() {
+        document.querySelector('.conversation.active').classList.remove('active');
+        this.classList.add('active');
+        const name = this.querySelector('.conversation-name').textContent;
+        document.querySelector('.chat-header').textContent = name;
+      });
+    });
+  </script>
+</body>
+</html>
